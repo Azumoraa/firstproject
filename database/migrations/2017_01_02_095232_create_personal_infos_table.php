@@ -17,11 +17,12 @@ class CreatePersonalInfosTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->date('dob');
+            $table->string('dob');
             $table->string('phone_no');
             $table->string('address');
             $table->string('email');
             $table->string('website');
+            $table->string('images');
             $table->timestamps();
         });
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\PersonalInfo;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $personalInfos = PersonalInfo::take(1)->get();
+        //return $personalInfo;
+        return view('frontend.index',compact('personalInfos'));
     }
 }

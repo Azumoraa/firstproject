@@ -23,6 +23,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+       $this->registerPersonalInfoRepo();
+    }
+
+     public function registerPersonalInfoRepo()
+    {
+        return $this->app->bind(
+            'App\\Repositories\\PersonalInfo\\PersonalInfoRepository',
+            'App\\Repositories\\PersonalInfo\\EloquentPersonalInfo'
+            );
     }
 }

@@ -77,23 +77,18 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2">
-                 <ul class="list-group">
-                  <li class="list-group-item "><a href="{{url('personal_info')}}">Personal Info</a></li>
-                  <li class="list-group-item ">Second item</li>
-                  <li class="list-group-item ">Third item</li>
-                  <li class="list-group-item ">Fourth item</li>
-                </ul>
-                    
-                </div>
-                <div class="col-md-10">
-                    @yield('content')
-                    
-                </div>
-                
+        <div class="row">
+            <div class="col-md-2 sidebar">
+            <div class="list-group">
+                <a href="{{url('/admin/personal_info')}}" class="list-group-item">Personal Info</a>
+                <a href="{{url('/admin/about')}}" class="list-group-item">About</a>
+                <a href="#" class="list-group-item">Third item</a>
             </div>
+        </div>
+        <div class="col-md-9">
+            @yield('content')
+
+        </div>
         </div>
 </div>
             

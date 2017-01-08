@@ -11,11 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
 
 Auth::routes();
-Route::get('/personal_info', 'PersonalInfoController@index');
+Route::get('/admin/personal_info', 'PersonalInfoController@index');
+Route::get('/admin/about', 'PersonalInfoController@about');
+Route::get('/admin', 'PersonalInfoController@dashboard');
+Route::post('/admin/personal_info/create','PersonalInfoController@create');
+Route::get('/admin/personal_info/add','PersonalInfoController@add');
+Route::post('/admin/personal_info/update/{id}','PersonalInfoController@update');
+Route::get('/admin/personal_info/edit/{id}','PersonalInfoController@edit');
+Route::get('/admin/personal_info/delete/{id}','PersonalInfoController@delete');
 
-Route::get('/home', 'HomeController@index');
+
+//Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
+

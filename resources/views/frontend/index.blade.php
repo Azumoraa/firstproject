@@ -41,51 +41,54 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--//end-smooth-scrolling-->
 </head>
 <body>
-	<!--banner-->
 	<div id="home" class="banner">
 		<div class="banner-info">
 			<div class="container">
+				@foreach($personalInfos as $personalInfo)
 				<div class="col-md-4 header-left">
-					<img src="{{asset('frontend_theme/images/img1.jpg')}}" alt=""/>
+					<img src="{{URL::asset('upload/'.$personalInfo['images'])}}" alt=""/>
 				</div>
+				
 				<div class="col-md-8 header-right">
 					<h2>Hello</h2>
-					<h1>I'm Christopher Doe</h1>
+					<h1>I'm {{$personalInfo['name']}}</h1>
 					<h6>Web Designer and Developer</h6>
 					<ul class="address">
 						<li>
 							<ul class="address-text">
 								<li><b>D.O.B</b></li>
-								<li>23-06-1980</li>
+								<li>{{$personalInfo['dob']}}</li>
 							</ul>
 						</li>
 						<li>
 							<ul class="address-text">
 								<li><b>PHONE </b></li>
-								<li>+00 111 222 3333</li>
+								<li>+{{$personalInfo['phone_no']}}</li>
 							</ul>
 						</li>
 						<li>
 							<ul class="address-text">
 								<li><b>ADDRESS </b></li>
-								<li>756 global Place, North Sydney, Canada.</li>
+								<li>{{$personalInfo['address']}}</li>
 							</ul>
 						</li>
 						<li>
 							<ul class="address-text">
 								<li><b>E-MAIL </b></li>
-								<li><a href="mailto:example@mail.com"> mail@example.com</a></li>
+								<li><a href="mailto:example@mail.com"> {{$personalInfo['email']}}</a></li>
 							</ul>
 						</li>
 						<li>
 							<ul class="address-text">
 								<li><b>WEBSITE </b></li>
-								<li><a href="http://w3layouts.com">www.myresume.com</a></li>
+								<li><a href="http://w3layouts.com">{{$personalInfo['website']}}</a></li>
 							</ul>
 						</li>
 					</ul>
 				</div>
+				
 				<div class="clearfix"> </div>
+				@endforeach
 			</div>
 		</div>
 	</div>

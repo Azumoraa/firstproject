@@ -21,37 +21,29 @@ class PersonalInfoController extends Controller
     }
     public function index(){
         $personalInfos=PersonalInfo::all();
-    	return view('backend.personal_info_view',compact('personalInfos'));
+    	return view('backend.personalinfo.personal_info_view',compact('personalInfos'));
     }
 
     public function create(Request $request){
-
-		$input=$request->all();
-		//$personalInfo = new PersonalInfo();
-		//$personalInfo->create($input);
-		$this->personalinfo_repo->create($input);
+        $this->personalinfo_repo->create($request->all());
     	return redirect('/admin/personal_info');
     }
-    public function about(){
-    	return view('backend.about');
-    }
+   
     public function update($id,Request $request){
-        $input=$request->all();
-        $personalInfo=PersonalInfo::findorfail($id);
-        $personalInfo->update($input);
+        $this->personalinfo_repo->update($id,$request->all());
+        
         return redirect('/admin/personal_info');
     }
     public function add(){
-        return view('backend.personal_info');
+        return view('backend.personalinfo.personal_info');
     }
 	public function edit($id){
         $personalInfo=PersonalInfo::findorfail($id);
-        return view('backend.personal_info_edit',compact('personalInfo'));
+        return view('backend.personalinfo.personal_info_edit',compact('personalInfo'));
     }
     public function delete($id){
-        $personalInfo=PersonalInfo::findorfail($id);
-        $personalInfo->delete();
-        return redirect()->back();
+        $this->personalinfo_repo->delete($id);
+        return redirect('/admin/personal_info');
     }
 }
 

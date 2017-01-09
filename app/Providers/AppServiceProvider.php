@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
        $this->registerPersonalInfoRepo();
+       $this->registerAboutRepo();
     }
 
      public function registerPersonalInfoRepo()
@@ -31,6 +32,12 @@ class AppServiceProvider extends ServiceProvider
         return $this->app->bind(
             'App\\Repositories\\PersonalInfo\\PersonalInfoRepository',
             'App\\Repositories\\PersonalInfo\\EloquentPersonalInfo'
+            );
+    }
+    public function registerAboutRepo(){
+        return $this->app->bind(
+            'App\\Repositories\\About\\AboutRepository',
+            'App\\Repositories\\About\\EloquentAbout'
             );
     }
 }

@@ -2,6 +2,7 @@
 @section('content')
  
 	<div class="container">
+  <a href="{{url('/admin/personal_info/add')}}" type="button" class="btn btn-success">Add</a>
   <h2>Personal Info</h2>
   <div class="col-md-9">
   <table class="table table-bordered">
@@ -30,7 +31,7 @@
         <td>{{$personalInfo['email']}}</td>
         <td>{{$personalInfo['website']}}</td>
         <td>
-        	<a href="{{url('/admin/personal_info/add')}}" type="button" class="btn btn-success">Add</a>
+        	
         	
         	<a href="{{url('/admin/personal_info/edit/'.$personalInfo['id'])}}" type="button" class="btn btn-info">Edit</a>
         	<a href="{{url('/admin/personal_info/delete/'.$personalInfo['id'])}}" type="button" class="btn btn-danger">Delete</a>

@@ -46,7 +46,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="container">
 				@foreach($personalInfos as $personalInfo)
 				<div class="col-md-4 header-left">
-					<img src="{{URL::asset('upload/'.$personalInfo['images'])}}" alt=""/>
+					<img src="{{URL::asset('upload/'.$personalInfo['images'])}}" height="150px" width="150px" alt=""/>
 				</div>
 				
 				<div class="col-md-8 header-right">
@@ -63,7 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li>
 							<ul class="address-text">
 								<li><b>PHONE </b></li>
-								<li>+{{$personalInfo['phone_no']}}</li>
+								<li>+977{{$personalInfo['phone_no']}}</li>
 							</ul>
 						</li>
 						<li>

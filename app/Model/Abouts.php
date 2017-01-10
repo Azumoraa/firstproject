@@ -9,7 +9,6 @@ class Abouts extends Model
     protected $fillable=[
     
     'description',
-    
     'status'
     ];
 }

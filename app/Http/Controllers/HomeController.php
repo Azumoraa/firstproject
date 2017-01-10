@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\PersonalInfo;
+use App\Model\Abouts;
+use App\Model\Award;
+
 
 class HomeController extends Controller
 {
@@ -25,7 +28,10 @@ class HomeController extends Controller
     public function index()
     {
         $personalInfos = PersonalInfo::take(1)->get();
+        $about = Abouts::first();
+        $awards = Award::all();
+
         //return $personalInfo;
-        return view('frontend.index',compact('personalInfos'));
+        return view('frontend.index',compact('personalInfos','about','awards'));
     }
 }

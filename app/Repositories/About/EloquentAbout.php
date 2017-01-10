@@ -22,7 +22,7 @@ class EloquentAbout implements AboutRepository{
 	}
 
 	function create(array $attributes){
-		//$attributes['status']='active';
+		$attributes['status']='Inactive';
 		return $this->about->create($attributes);
 
 	}
@@ -33,7 +33,7 @@ class EloquentAbout implements AboutRepository{
 	}
 
 	function delete($id){
-		return $this->about->findorfail($id)->delete();
+		return $this->about->findorfail($id)->delete($id);
 
 	}
 
@@ -43,18 +43,19 @@ class EloquentAbout implements AboutRepository{
 	}
 
 	function createAward(array $attributes){
-		//$attributes['status']='active';
-		return $this->award->createAward($attributes);
+		$attributes['status']='Inactive';
+		
+		return $this->award->create($attributes);
 
 	}
 
 	function updateAward($id,array $attributes){
-		return $this->award->findorfail($id)->updateAward($attributes);
+		return $this->award->findorfail($id)->update($attributes);
 
 	}
 
 	function deleteAward($id){
-		return $this->award->findorfail($id)->deleteAward();
+		return $this->award->findorfail($id)->delete($id);
 
 	}
 

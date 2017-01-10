@@ -25,7 +25,9 @@ class AboutController extends Controller
 
     public function index(){
         $abouts=Abouts::all();
-        return view('backend.about.about_view',compact('abouts'));
+        $awards=Award::all();
+        
+        return view('backend.about.about_view',compact('abouts','awards'));
         
     }
 
@@ -34,9 +36,19 @@ class AboutController extends Controller
 		
     	return redirect('/admin/about');
     }
+    public function createAward(Request $request){    
+       
+        $this->about_repo->createAward($request->all());
+        
+        return redirect('/admin/about');
+    }
    
     public function update($id,Request $request){
         $this->about_repo->update($id,$request->all());
+        return redirect('/admin/about');
+    }
+    public function updateAward($id,Request $request){
+        $this->about_repo->updateAward($id,$request->all());
         return redirect('/admin/about');
     }
     public function add(){
@@ -46,9 +58,45 @@ class AboutController extends Controller
         $about=abouts::findorfail($id);
         return view('backend.about.about_edit',compact('about'));
     }
+    public function editAward($id){
+        $award=Award::findorfail($id);
+        return view('backend.about.about_edit',compact('award'));
+    }
+
     public function delete($id){
         $this->about_repo->delete($id);
         return redirect('/admin/about');
+    }
+    public function deleteAward($id){
+        $this->about_repo->deleteAward($id);
+        return redirect('/admin/about');
+    }
+    public function statuschange($id)
+    {
+        $about=Abouts::findorfail($id);
+        if($about['status']=='active'){
+            $about['status']='inactive';
+        }
+        else {
+            $about['status']='active';
+        }
+        $about->update();
+        return redirect('/admin/about');
+    }
+    public function statuschangeAward($id)
+    {
+        $award=Award::findorfail($id);
+        if($award['status']=='active'){
+            $award['status']='inactive';
+        }
+        else {
+            $award['status']='active';
+        }
+        $award->update();
+        return redirect('/admin/about');
+    }
+    public function addAward($id){
+        return view('backend.about.award_add',compact('id'));
     }
 
 

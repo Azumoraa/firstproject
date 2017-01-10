@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
     {
        $this->registerPersonalInfoRepo();
        $this->registerAboutRepo();
+
     }
 
      public function registerPersonalInfoRepo()

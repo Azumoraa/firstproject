@@ -16,7 +16,7 @@ class CreateAboutsTable extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('description');
-        
+            $table->enum('status',['active','inactive']);
             $table->string('status');
             $table->timestamps();
         });

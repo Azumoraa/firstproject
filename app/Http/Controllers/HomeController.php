@@ -28,10 +28,12 @@ class HomeController extends Controller
     public function index()
     {
         $personalInfos = PersonalInfo::take(1)->get();
-        $about = Abouts::first();
-        $awards = Award::all();
+        $about = Abouts::where('status','active')->first();
+        //return $about;
+        $awards = Award::where('about_id',$about['id'])->where('status','active')->get();
 
         //return $personalInfo;
         return view('frontend.index',compact('personalInfos','about','awards'));
     }
+
 }

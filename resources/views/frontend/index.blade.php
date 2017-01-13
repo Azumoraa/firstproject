@@ -24,7 +24,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="{{asset('frontend_theme/js/jquery-1.11.1.min.js')}}"></script> 
 <!-- //js -->
 <!--web-fonts-->
-<link href='//fonts.googleapis.com/css?family=Overlock:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Overlock:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/cssst'>
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//web-fonts-->
 <!--start-smooth-scrolling-->
@@ -121,20 +121,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--about-->
 	<div id="about" class="about">
 		<div class="container">
+		
 			<h3 class="title"> About Me</h3>
 			<div class="col-md-8 about-left">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet sem sit amet dolor luctus pellentesque. Pellentesque eleifend tellus at interdum elementum. Nam egestas molestie elit. Vivamus sed accumsan quam, a mollis magna. Nam aliquet eros eget sapien consequat tincidunt at vel nibh. Duis ut turpis mi. Duis nec scelerisque urna, sit amet varius arcu. Aliquam aliquet sapien quis mauris semper suscipit. Maecenas pharetra dapibus posuere. Praesent odio sem, varius quis dolor vel, maximus dapibus mi. Pellentesque mattis mauris neque. Nam aliquam turpis ante, at cursus massa ullamcorper ut. Proin id diam id nisi sagittis pellentesque sed sit amet eros.  
-				In porttitor tempus nulla, a porta purus commodo sed. Praesent hendrerit nisi nunc, ut porttitor justo pellentesque et ac gravida sem mattis. Donec ornare justo nec</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet sem sit amet dolor luctus pellentesque Nam egestas molestie elit. Vivamus sed accumsan quam, a mollis magna. Nam aliquet eros eget sapien consequat</p>
+				<p>{{$about['description']}}</p>
+		
 			</div>
+			
 			<div class="col-md-4 about-right">
+
 				<ul>
 					<h5>Awards</h5>
-					<li><span class="glyphicon glyphicon-menu-right"></span> Lorem ipsum dolor sit amet cingelit</li>
-					<li><span class="glyphicon glyphicon-menu-right"></span> Curabitur id metus rutrum convallis</li>
-					<li><span class="glyphicon glyphicon-menu-right"></span> Morbi dictum velit vitae porttitor</li>
-					<li><span class="glyphicon glyphicon-menu-right"></span> Fusce at metus id justo ullamcorper</li>
-					<li><span class="glyphicon glyphicon-menu-right"></span> Aliquam ac nisl id justo malesuada </li>
+					@foreach($awards as $award)
+					<li><span class="glyphicon glyphicon-menu-right"></span> {{$award['award']}}</li>
+					@endforeach		
 				</ul>
 				<div class="clearfix"> </div>
 			</div>

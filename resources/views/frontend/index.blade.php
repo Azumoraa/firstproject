@@ -24,7 +24,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="{{asset('frontend_theme/js/jquery-1.11.1.min.js')}}"></script> 
 <!-- //js -->
 <!--web-fonts-->
-<link href='//fonts.googleapis.com/css?family=Overlock:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/cssst'>
+<link href='//fonts.googleapis.com/css?family=Overlock:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//web-fonts-->
 <!--start-smooth-scrolling-->
